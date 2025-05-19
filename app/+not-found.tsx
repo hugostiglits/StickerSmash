@@ -1,12 +1,15 @@
 import {Stack, Link} from 'expo-router';
-import {View, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 export default function NotFoundScreen() {
     return(
         <>
             <Stack.Screen options={ {title: "Page Not Found"} }/>
             <View style={styles.container}>
-                <Link style={styles.button} href='/'>Go to Main Page</Link>
+                <Text style={styles.text}>Видимо такой страницы нет</Text>
+                <Link href="/" style={styles.button}>
+                    Go back to Home screen!
+                </Link>
             </View>
         </>
     );
@@ -24,5 +27,8 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 20,
         textDecorationLine: 'underline',
-    }
+    },
+    text : {
+        color: '#fff',
+    },
 });
